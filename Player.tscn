@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+
+[node name="Player" type="RigidBody"]
+
+[node name="PlayerOrigin" type="ARVROrigin" parent="."]
+
+[node name="PlayerCamera" type="ARVRCamera" parent="PlayerOrigin"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0 )
+
+[node name="PlayerCollisionShape" type="CollisionShape" parent="."]
+shape = SubResource( 1 )
