@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "lowman_shoes.003"
@@ -39,13 +39,12 @@ surfaces/0 = {
 [node name="PlayerOrigin" type="ARVROrigin" parent="."]
 
 [node name="PlayerCamera" type="ARVRCamera" parent="PlayerOrigin"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.85, 0 )
 
 [node name="LeftHandController" type="ARVRController" parent="PlayerOrigin"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 1.2, 0 )
 
 [node name="LeftHandMesh" type="MeshInstance" parent="PlayerOrigin/LeftHandController"]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+transform = Transform( -0.848048, 0, 0.529919, 0, 1, 0, -0.529919, 0, -0.848048, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = null
 
@@ -58,7 +57,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 1.2, 0 )
 controller_id = 2
 
 [node name="RightHandMesh" type="MeshInstance" parent="PlayerOrigin/RightHandController"]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+transform = Transform( -0.848048, 0, -0.529919, 0, 1, 0, 0.529919, 0, -0.848048, 0, 0, 0 )
 mesh = SubResource( 3 )
 material/0 = null
 
