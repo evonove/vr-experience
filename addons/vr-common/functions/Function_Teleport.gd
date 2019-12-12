@@ -224,7 +224,7 @@ func _physics_process(delta):
 			new_transform.basis.z = new_transform.basis.x.cross(new_transform.basis.y).normalized()
 			
 			# find out our user's feet's transformation
-			var camera_node = origin_node.get_node("ARVRCamera")
+			var camera_node = origin_node.get_node("PlayerCamera")
 			var cam_transform = camera_node.transform
 			var user_feet_transform = Transform()
 			user_feet_transform.origin = cam_transform.origin
