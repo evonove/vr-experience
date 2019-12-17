@@ -7,6 +7,7 @@
 [node name="Environment" type="Spatial"]
 
 [node name="BottomFloor" type="StaticBody" parent="."]
+collision_mask = 2
 
 [node name="BottomFloorCollisionShape" type="CollisionShape" parent="BottomFloor"]
 transform = Transform( 15, 0, 0, 0, 0.8, 0, 0, 0, 15, 0, 0, 0 )
