@@ -16,6 +16,7 @@ export var strength = 5.0
 
 onready var ws = ARVRServer.world_scale
 var origin_node = null
+var root_node = null
 var is_on_floor = true
 var is_teleporting = false
 var can_teleport = true
@@ -61,6 +62,7 @@ func set_player_radius(p_radius):
 func _ready():
 	# We should be a child of an ARVRController and it should be a child or our ARVROrigin
 	origin_node = get_node("../..")
+	root_node = get_node("../../..")
 
 	# It's inactive when we start
 	$Teleport.visible = false
@@ -236,7 +238,7 @@ func _physics_process(delta):
 			user_feet_transform.basis.z = user_feet_transform.basis.x.cross(user_feet_transform.basis.y).normalized()
 			
 			# now move the origin such that the new global user_feet_transform would be == new_transform
-			origin_node.global_transform = new_transform * user_feet_transform.inverse()
+			root_node.global_transform = new_transform * user_feet_transform.inverse()
 		
 		# and disable
 		is_teleporting = false;
