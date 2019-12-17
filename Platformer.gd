@@ -6,7 +6,8 @@ var pos = Vector3(0,1,0)
 var move = false
 
 func _on_Area_body_entered(body):
-	move = true
+	if body.get_name() == "Player":
+		move = true
 	
 func _physics_process(delta):
 	if move:
