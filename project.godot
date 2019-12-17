@@ -27,7 +27,7 @@ singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
 
 3d_render/layer_1="environment"
 3d_physics/layer_1="environment"
-3d_render/layer_2="layer"
+3d_render/layer_2="player"
 3d_physics/layer_2="player"
 
 [rendering]
