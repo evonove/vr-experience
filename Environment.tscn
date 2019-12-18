@@ -7,8 +7,8 @@
 [node name="Environment" type="Spatial"]
 
 [node name="BottomFloor" type="StaticBody" parent="."]
-collision_mask = 2
 editor/display_folded = true
+collision_mask = 2
 
 [node name="BottomFloorCollisionShape" type="CollisionShape" parent="BottomFloor"]
 transform = Transform( 15, 0, 0, 0, 0.55, 0, 0, 0, 15, 0, 0, 0 )
@@ -16,5 +16,19 @@ shape = SubResource( 1 )
 
 [node name="BottomFloorMesh" type="MeshInstance" parent="BottomFloor"]
 transform = Transform( 15, 0, 0, 0, 0.5, 0, 0, 0, 15, 0, 0, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="UpperFloor1" type="StaticBody" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1576, 2.82007 )
+collision_mask = 2
+
+[node name="UpperFloor1CollisionShape" type="CollisionShape" parent="UpperFloor1"]
+transform = Transform( 8.1, 0, 0, 0, 0.22, 0, 0, 0, 6.2, 5.30892, 0, -6.32804 )
+shape = SubResource( 1 )
+
+[node name="UpperFloor1Mesh" type="MeshInstance" parent="UpperFloor1"]
+transform = Transform( 8, 0, 0, 0, 0.2, 0, 0, 0, 6, 5.30892, 0, -6.25549 )
 mesh = SubResource( 2 )
 material/0 = null
