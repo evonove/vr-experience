@@ -11,7 +11,7 @@ var is_platform_moving = false
 var platform_moved = false
 
 var timer = Timer.new()
-onready var area_mesh_instance = get_node("Area/CollisionShape/MeshInstance")
+onready var area_mesh_instance = get_node("Area/MeshInstance")
 
 
 func timer_setup():
@@ -31,13 +31,14 @@ func _on_timer_timeout():
     
     
 func _on_Area_body_entered(body):
-    if body.get_name() == "Player" and not platform_moved:
+	print("body name", body.get_name())
+	if body.get_name() == "Player" and not platform_moved:
         timer.stop()
         is_platform_moving = true
         platform_moved = true
         area_mesh_instance.visible = false
         
-    elif body.get_name() == "UpperFloor1":
+	elif body.get_name() == "UpperFloor1":
         is_platform_moving = false
 	
     

@@ -91,7 +91,7 @@ func _physics_process(delta):
 		$Teleport.mesh.size = Vector2(0.05 * ws, 1.0)
 		$Target.mesh.size = Vector2(ws, ws)
 		$Target/Player_figure.scale = Vector3(ws, ws, ws)
-	
+
 	if controller and controller.get_is_active() and controller.is_button_pressed(teleport_button):
 		if !is_teleporting:
 			is_teleporting = true
@@ -244,4 +244,3 @@ func _physics_process(delta):
 		is_teleporting = false;
 		$Teleport.visible = false
 		$Target.visible = false
-

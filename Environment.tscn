@@ -1,17 +1,20 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [sub_resource type="BoxShape" id=1]
+extents = Vector3( 15.3128, 0.530815, 15.0398 )
 
 [sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 7.92731, 0.200274, 5.85526 )
 
 [node name="Environment" type="Spatial"]
 
 [node name="BottomFloor" type="StaticBody" parent="."]
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.457275, 0 )
 collision_mask = 2
 
 [node name="BottomFloorCollisionShape" type="CollisionShape" parent="BottomFloor"]
-transform = Transform( 15, 0, 0, 0, 0.55, 0, 0, 0, 15, 0, 0, 0 )
 shape = SubResource( 1 )
 
 [node name="BottomFloorMesh" type="MeshInstance" parent="BottomFloor"]
@@ -24,8 +27,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.1576, 2.82007 )
 collision_mask = 2
 
 [node name="UpperFloor1CollisionShape" type="CollisionShape" parent="UpperFloor1"]
-transform = Transform( 8.1, 0, 0, 0, 0.01, 0, 0, 0, 6.2, 5.30892, 0.212456, -6.32804 )
-shape = SubResource( 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.27525, -0.00736713, -6.328 )
+shape = SubResource( 3 )
 
 [node name="UpperFloor1Mesh" type="MeshInstance" parent="UpperFloor1"]
 transform = Transform( 8, 0, 0, 0, 0.2, 0, 0, 0, 6, 5.30892, 0, -6.25549 )
