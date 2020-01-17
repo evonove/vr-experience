@@ -49,6 +49,7 @@ func _ready():
     
 func _physics_process(delta):            
     if is_platform_moving:
+        
         # makes the platform move
         vel.y = force * delta
         move_and_slide(vel, pos)

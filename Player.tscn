@@ -20,6 +20,7 @@ surfaces/0 = {
 }
 
 [sub_resource type="SphereShape" id=2]
+radius = 0.15607
 
 [sub_resource type="ArrayMesh" id=3]
 resource_name = "lowman_shoes.004"
@@ -36,9 +37,10 @@ surfaces/0 = {
 }
 
 [sub_resource type="SphereShape" id=4]
+radius = 0.153235
 
 [sub_resource type="BoxShape" id=5]
-extents = Vector3( 0.356359, 0.853357, 0.212826 )
+extents = Vector3( 0.284716, 0.219819, 0.212826 )
 
 [node name="Player" type="RigidBody"]
 collision_layer = 2
@@ -57,13 +59,13 @@ mesh = SubResource( 1 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="PlayerOrigin/LeftHandController"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.0223315 )
 shape = SubResource( 2 )
 
 [node name="Function_Teleport" parent="PlayerOrigin/LeftHandController" instance=ExtResource( 2 )]
 collision_layer = 2
 
 [node name="RightHandController" type="ARVRController" parent="PlayerOrigin"]
+editor/display_folded = true
 controller_id = 2
 
 [node name="RightHandMesh" type="MeshInstance" parent="PlayerOrigin/RightHandController"]
@@ -73,7 +75,6 @@ mesh = SubResource( 3 )
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="PlayerOrigin/RightHandController"]
-transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, -0.0151684 )
 shape = SubResource( 4 )
 
 [node name="LeftFootController" type="ARVRController" parent="PlayerOrigin"]
@@ -89,7 +90,6 @@ controller_id = 4
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
 
 [node name="PlayerCollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0111523, 0.590917, -0.000656128 )
 shape = SubResource( 5 )
 [connection signal="button_pressed" from="PlayerOrigin/LeftHandController" to="." method="_on_LeftHandController_button_pressed"]
 [connection signal="button_pressed" from="PlayerOrigin/RightHandController" to="." method="_on_RightHandController_button_pressed"]
