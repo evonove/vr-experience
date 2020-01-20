@@ -239,6 +239,7 @@ func _physics_process(delta):
 			
 			# now move the origin such that the new global user_feet_transform would be == new_transform
 			root_node.global_transform = new_transform * user_feet_transform.inverse()
+		#	origin_node.global_transform = new_transform * user_feet_transform.inverse()
 		
 		# and disable
 		is_teleporting = false;
