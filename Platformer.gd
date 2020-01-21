@@ -57,7 +57,7 @@ func _ready():
    
 func _move_platform_with_button():
      timer.stop()
-     player.set_translation(Vector3(1.75,0.79,0.75))
+     player.set_translation(Vector3(1,0,0.75))
      is_platform_moving = true
      platform_moved = true
      area_mesh_instance.visible = false 
