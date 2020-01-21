@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/BridgeFinal9Ridotto.escn-ac2a15ff7e861acff1e02a426160ccd5.scn"
+path="res://.import/BridgeIKRidotto.escn-cff3de1ff95008a96e40ed000295c155.scn"
 
 [deps]
 
-source_file="res://BridgeFinal9Ridotto.escn"
-dest_files=[ "res://.import/BridgeFinal9Ridotto.escn-ac2a15ff7e861acff1e02a426160ccd5.scn" ]
+source_file="res://BridgeIKRidotto.escn"
+dest_files=[ "res://.import/BridgeIKRidotto.escn-cff3de1ff95008a96e40ed000295c155.scn" ]
 
 [params]
 

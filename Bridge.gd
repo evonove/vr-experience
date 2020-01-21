@@ -1,15 +1,21 @@
-extends RigidBody
+extends Spatial
 
-var is_moving = false
-onready var player = get_node("../Player")
+var timer = Timer.new()
 
-func _on_Area_body_entered(body):
-	if body.get_name() == "Player":
-		player.set_translation(Vector3(0.6,5.549,-0.53))
-		print("Player is on the bridge")
-		is_moving = true
+func timer_setup():
+    timer.set_autostart(false)
+    timer.set_wait_time(2)
+    timer.process_mode = 1
+    add_child(timer)
 
+func _on_timer_timeout():
+    $Boards.apply_torque_impulse(Vector3(0.001,0,0))
 
-func move():
-	if (is_moving):
-		apply_torque_impulse(Vector3(0,0,5))
+func _ready():
+    timer.connect("timeout", self, "_on_timer_timeout")
+    timer_setup()
+
+func _on_Board1_area_entered(area):
+	if area.get_name() == "RightFootArea" or area.get_name() == "LeftFootArea":
+		$Boards.rotate_x(0.03)
+		timer.start()

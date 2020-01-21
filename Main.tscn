@@ -5,8 +5,8 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://default_env.tres" type="Environment" id=4]
 [ext_resource path="res://Platformer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Bridge.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Bridge.tscn" type="PackedScene" id=7]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -28,7 +28,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22491, 0.0024848, -0.498975
 transform = Transform( 0.8, 0, 0, 0, 0.06, 0, 0, 0, 0.9, -0.220186, 0.0163727, -0.51714 )
 
 [node name="UpperFloor2" parent="Environment" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.166, 4.93127, -5.582 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21254, 4.96001, -5.582 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor2" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.383496, 0.0019455, -0.0885825 )
@@ -38,8 +38,8 @@ transform = Transform( 0.7, 0, 0, 0, 0.06, 0, 0, 0, 1.2, 0.382942, 0.0163879, -0
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.412, 0 )
-mass = 0.9
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321838, 0 )
+mass = 0.3
 gravity_scale = 0.5
 script = null
 
@@ -55,12 +55,14 @@ visible = false
 light_energy = 0.82
 shadow_enabled = true
 
-[node name="Bridge" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
-transform = Transform( 0.7, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.475356, 4.98536, -0.531335 )
-
-[node name="Button" parent="." instance=ExtResource( 7 )]
+[node name="Button" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.82698, -0.326251, 1.20249 )
+
+[node name="Bridge" parent="." instance=ExtResource( 7 )]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.166897, 5.10048, -0.632935 )
+
+[node name="Boards" parent="Bridge" index="0"]
+editor/display_folded = true
 [connection signal="move_platform" from="Button" to="Platformer" method="_move_platform_with_button"]
 
 [editable path="Environment"]
