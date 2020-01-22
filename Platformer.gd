@@ -17,7 +17,7 @@ var upperFloor
 var stopping
 var h
 
-onready var player = get_node("../Player")
+#onready var player = get_node("../Player")
 
 func timer_setup():
     """
@@ -57,7 +57,7 @@ func _ready():
    
 func _move_platform_with_button():
      timer.stop()
-     player.set_translation(Vector3(1,0,0.75))
+ #    player.set_translation(Vector3(1,0,0.75))
      is_platform_moving = true
      platform_moved = true
      area_mesh_instance.visible = false 
@@ -68,5 +68,6 @@ func _physics_process(delta):
         vel.y = force * delta
         move_and_slide(vel, pos)
         h = int(self.get_translation().y)
-        if h == stopping:
+        if h == stopping + 0.1:
+        # platform stops
             force = 0

@@ -17,7 +17,7 @@ func _ready():
     timer_setup()
 
 func _on_Board1_area_entered(area):
-#	pass
+#	the impulse is applied when the player collides with the first axis
 	if area.get_name() == "RightFootArea" or area.get_name() == "LeftFootArea":
 		print("Player is on the Board1")
 	#	$Boards.rotate_x(0.03)
