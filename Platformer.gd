@@ -19,6 +19,40 @@ var h
 
 onready var player = get_node("../Player")
 
+const SERCOMM = preload("res://addons/GDSerCommDock/bin/GDSerComm.gdns")
+onready var PORT = SERCOMM.new()
+
+enum  bytesz {
+	SER_BYTESZ_8 = 0,
+	SER_BYTESZ_7,
+	SER_BYTESZ_6,
+	SER_BYTESZ_5
+}
+
+# parity, to be used with open function (argument #5) and is optional
+enum parity {
+	SER_PAR_NONE,
+	SER_PAR_ODD,
+	SER_PAR_EVEN,
+	SER_PAR_MARK,
+	SER_PAR_SPACE
+}
+
+# stopbyte, to be used with open function (argument #6) and is optional
+enum stopbyte {
+	SER_STOPB_ONE, #1
+	SER_STOPB_ONE5,#1.5
+	SER_STOPB_TWO #2
+} 
+
+# queue, to be used with flush function 
+# if not added, the function defaults to SER_QUEUE_IN
+enum queue {
+	SER_QUEUE_IN,
+	SER_QUEUE_OUT,
+	SER_QUEUE_ALL
+}
+
 func timer_setup():
     """
     setup a timer used to make the platform to blink
@@ -35,32 +69,26 @@ func _on_timer_timeout():
         area_mesh_instance.visible = !area_mesh_instance.visible
     
     
-func _on_Area_body_entered(body):
-	pass
-#    print("body name: ", body.get_name())
-#    if body.get_name() == "Player" and not platform_moved:
-#    if (body.get_name() == "LeftFoot" or body.get_name() == "RightFoot") and not platform_moved:
-#        timer.stop()
-#        is_platform_moving = true
-#        platform_moved = true
-#        area_mesh_instance.visible = false
-        
-#    elif body.get_name() == "UpperFloor1":
-#        is_platform_moving = false
-
-    
+   
 func _ready():
     timer.connect("timeout", self, "_on_timer_timeout")
     timer_setup()
     upperFloor = get_node("../Environment/UpperFloor1")
     stopping = int(upperFloor.get_translation().y)
+	print("ports", PORT.list_ports())
+	var ports = PORT.list_ports();
+	PORT.open(ports[0], 9600, 1000, bytesz.SER_BYTESZ_8, parity.SER_PAR_NONE, stopbyte.SER_STOPB_ONE)
+	PORT.flush()
+	print("get_available", PORT.get_available())
    
 func _move_platform_with_button():
      timer.stop()
      player.set_translation(Vector3(1,0,0.75))
      is_platform_moving = true
      platform_moved = true
-     area_mesh_instance.visible = false 
+     area_mesh_instance.visible = false
+	 PORT.write("h")
+	 PORT.flush()
     
 func _physics_process(delta):  
     if is_platform_moving:
@@ -70,3 +98,6 @@ func _physics_process(delta):
         h = int(self.get_translation().y)
         if h == stopping:
             force = 0
+			PORT.write("l")
+			PORT.flush()
+
