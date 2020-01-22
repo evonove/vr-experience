@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "",
+"class": "GDSerComm",
+"language": "NativeScript",
+"path": "res://addons/GDSerCommDock/bin/GDSerComm.gdns"
+} ]
 _global_script_class_icons={
-
+"GDSerComm": ""
 }
 
 [application]
@@ -29,6 +34,8 @@ singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
 3d_physics/layer_1="environment"
 3d_render/layer_2="player"
 3d_physics/layer_2="player"
+3d_render/layer_3="bridge"
+3d_physics/layer_3="bridge"
 
 [rendering]
 

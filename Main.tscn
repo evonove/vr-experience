@@ -18,7 +18,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.46106 )
 environment = ExtResource( 4 )
 
 [node name="Platformer" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.79839, 0.128536, 0.66336 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.69847, 0.128536, 0.66336 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.981075, 0.19363, 0, -0.19363, 0.981075, 0, 1.83998, 3.29199 )
