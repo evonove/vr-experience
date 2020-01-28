@@ -71,33 +71,33 @@ func _on_timer_timeout():
     
    
 func _ready():
-    timer.connect("timeout", self, "_on_timer_timeout")
-    timer_setup()
-    upperFloor = get_node("../Environment/UpperFloor1")
-    stopping = int(upperFloor.get_translation().y)
+	timer.connect("timeout", self, "_on_timer_timeout")
+	timer_setup()
+	upperFloor = get_node("../Environment/UpperFloor1")
+	stopping = int(upperFloor.get_translation().y)
 	print("ports", PORT.list_ports())
 	var ports = PORT.list_ports();
-	PORT.open(ports[0], 9600, 1000, bytesz.SER_BYTESZ_8, parity.SER_PAR_NONE, stopbyte.SER_STOPB_ONE)
+	PORT.open(ports[0], 9600, 1000)
 	PORT.flush()
 	print("get_available", PORT.get_available())
    
 func _move_platform_with_button():
-     timer.stop()
-     player.set_translation(Vector3(1,0,0.75))
-     is_platform_moving = true
-     platform_moved = true
-     area_mesh_instance.visible = false
+	 timer.stop()
+	 player.set_translation(Vector3(1,0,0.75))
+	 is_platform_moving = true
+	 platform_moved = true
+	 area_mesh_instance.visible = false
 	 PORT.write("h")
 	 PORT.flush()
     
 func _physics_process(delta):  
-    if is_platform_moving:
-        # makes the platform move
-        vel.y = force * delta
-        move_and_slide(vel, pos)
-        h = int(self.get_translation().y)
-        if h == stopping:
-            force = 0
+	if is_platform_moving:
+		# makes the platform move
+		vel.y = force * delta
+		move_and_slide(vel, pos)
+		h = int(self.get_translation().y)
+		# platform stops
+		if h == stopping + 0.1:
+			force = 0
 			PORT.write("l")
 			PORT.flush()
-
