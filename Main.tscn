@@ -15,9 +15,10 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.46106 )
 
 [node name="BottomFloor" parent="Environment" index="0"]
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.0525089, -5.43461 )
 
 [node name="UpperFloor1" parent="Environment" index="1"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.724, 5, -5.43165 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor1" index="0"]
@@ -37,16 +38,15 @@ transform = Transform( 0.65, 0, 0, 0, 0.06, 0, 0, 0, 1.2, 0.290302, 0.0163879, -
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290193, 0 )
 mass = 0.3
 gravity_scale = 0.5
-script = null
+contacts_reported = 1
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )
 
 [node name="Platformer" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 1.75, 0.139, 0.77 )
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 1.75, 0.181043, 0.77 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.981075, 0.19363, 0, -0.19363, 0.981075, 0, 1.83998, 3.29199 )
@@ -55,7 +55,7 @@ light_energy = 0.82
 shadow_enabled = true
 
 [node name="Button" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73437, -0.253009, 1.20249 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73437, -0.174178, 1.20249 )
 
 [node name="Bridge" parent="." instance=ExtResource( 7 )]
 editor/display_folded = true
