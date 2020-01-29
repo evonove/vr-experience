@@ -14,10 +14,8 @@ script = ExtResource( 1 )
 [node name="Environment" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.46106 )
 
-[node name="BottomFloor" parent="Environment" index="0"]
-editor/display_folded = true
-
 [node name="UpperFloor1" parent="Environment" index="1"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.724, 5, -5.43165 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor1" index="0"]
@@ -27,6 +25,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162053, 0.0024848, -0.51740
 transform = Transform( 0.7, 0, 0, 0, 0.06, 0, 0, 0, 0.9, -0.166933, 0.0163727, -0.51714 )
 
 [node name="UpperFloor2" parent="Environment" index="2"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21254, 5.00508, -5.582 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor2" index="0"]
@@ -36,7 +35,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293984, 0.0019455, -0.092656
 transform = Transform( 0.65, 0, 0, 0, 0.06, 0, 0, 0, 1.2, 0.290302, 0.0163879, -0.0992045 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.290193, 0 )
 mass = 0.3
 gravity_scale = 0.5
