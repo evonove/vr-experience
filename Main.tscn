@@ -15,6 +15,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.46106 )
 
 [node name="BottomFloor" parent="Environment" index="0"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.0525089, -5.43461 )
 
 [node name="UpperFloor1" parent="Environment" index="1"]
@@ -37,10 +38,10 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293984, 0.0019455, -0.092656
 transform = Transform( 0.65, 0, 0, 0, 0.06, 0, 0, 0, 1.2, 0.290302, 0.0163879, -0.0992045 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
 mass = 0.3
 gravity_scale = 0.5
 contacts_reported = 1
+script = null
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 4 )

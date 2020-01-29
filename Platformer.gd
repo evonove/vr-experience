@@ -18,40 +18,42 @@ var stopping
 var h
 
 onready var player = get_node("../Player")
+onready var origin = get_node("../Player/PlayerOrigin")
+onready var camera = get_node("../Player/PlayerOrigin/PlayerCamera")
 
 const SERCOMM = preload("res://addons/GDSerCommDock/bin/GDSerComm.gdns")
 onready var PORT = SERCOMM.new()
 
-enum  bytesz {
-	SER_BYTESZ_8 = 0,
-	SER_BYTESZ_7,
-	SER_BYTESZ_6,
-	SER_BYTESZ_5
-}
+#enum  bytesz {
+#	SER_BYTESZ_8 = 0,
+#	SER_BYTESZ_7,
+#	SER_BYTESZ_6,
+#	SER_BYTESZ_5
+#}
 
 # parity, to be used with open function (argument #5) and is optional
-enum parity {
-	SER_PAR_NONE,
-	SER_PAR_ODD,
-	SER_PAR_EVEN,
-	SER_PAR_MARK,
-	SER_PAR_SPACE
-}
+#enum parity {
+#	SER_PAR_NONE,
+#	SER_PAR_ODD,
+#	SER_PAR_EVEN,
+#	SER_PAR_MARK,
+#	SER_PAR_SPACE
+#}
 
 # stopbyte, to be used with open function (argument #6) and is optional
-enum stopbyte {
-	SER_STOPB_ONE, #1
-	SER_STOPB_ONE5,#1.5
-	SER_STOPB_TWO #2
-} 
+#enum stopbyte {
+#	SER_STOPB_ONE, #1
+#	SER_STOPB_ONE5,#1.5
+#	SER_STOPB_TWO #2
+#} 
 
 # queue, to be used with flush function 
 # if not added, the function defaults to SER_QUEUE_IN
-enum queue {
-	SER_QUEUE_IN,
-	SER_QUEUE_OUT,
-	SER_QUEUE_ALL
-}
+#enum queue {
+#	SER_QUEUE_IN,
+#	SER_QUEUE_OUT,
+#	SER_QUEUE_ALL
+#}
 
 func timer_setup():
 	"""
@@ -82,13 +84,15 @@ func _ready():
 	print("get_available", PORT.get_available())
    
 func _move_platform_with_button():
-	 timer.stop()
-#	 player.set_translation(Vector3(1,0,0.75))
-	 is_platform_moving = true
-	 platform_moved = true
-	 area_mesh_instance.visible = false
-	 PORT.write("h")
-	 PORT.flush()
+	timer.stop()
+	player.set_translation(Vector3(1.7,0,0.8))
+	origin.set_translation(Vector3(-1.7,0,-0.8))
+	camera.set_translation(Vector3(-1.7,0,-0.8))
+	is_platform_moving = true
+	platform_moved = true
+	area_mesh_instance.visible = false
+	PORT.write("h")
+	PORT.flush()
 	
 func _physics_process(delta):  
 	if is_platform_moving:
