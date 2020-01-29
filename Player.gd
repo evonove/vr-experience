@@ -1,17 +1,33 @@
 extends RigidBody
 
+var position
+var origin
+var collision
+var new_position
 
-func _on_LeftHandController_button_pressed(button):
-	print("left ", button)
-
-
-func _on_RightHandController_button_pressed(button):
-	print("right ", button)
-
+func _ready():
+	origin = get_node("PlayerOrigin")
+	position = origin.get_translation()
+	collision = get_node("PlayerCollisionShape")
+	new_position = collision.get_translation()
+	
 func _physics_process(delta):
-	var right_foot : = $PlayerOrigin/RightFootController
-	right_foot.set_rumble(1.0)
-	Input.start_joy_vibration(right_foot.get_joystick_id(), 1.0, 1.0, 10000)
-	var left_foot := $PlayerOrigin/LeftFootController
-	Input.start_joy_vibration(left_foot.get_joystick_id(), 1.0, 1.0, 10000)
-	left_foot.set_rumble(1.0)
+	position = origin.get_translation()
+
+func _on_LeftFootArea_body_entered(body):
+	if body.get_name() == "BottomFloor" or body.get_name() == "UpperFloor1":
+		if position != new_position:
+	#	position = origin.get_translation()
+			print(position)
+			print(new_position)
+			collision.set_translation(position)
+			new_position = position
+
+
+func _on_RightFootArea_body_entered(body):
+	if body.get_name() == "BottomFloor" or body.get_name() == "UpperFloor1":
+		if position != new_position:
+			print(position)
+			print(new_position)
+			collision.set_translation(position)
+			new_position = position
