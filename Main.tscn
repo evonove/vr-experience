@@ -12,32 +12,32 @@
 script = ExtResource( 1 )
 
 [node name="Environment" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.46106 )
-
-[node name="BottomFloor" parent="Environment" index="0"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.0525089, -5.43461 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330738, 5.4624 )
 
 [node name="UpperFloor1" parent="Environment" index="1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.724, 5, -5.43165 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47396, 4.77682, -5.45891 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor1" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162053, 0.0024848, -0.517408 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0628442, 0.183579, -0.451272 )
 
 [node name="UpperFloor1Mesh" parent="Environment/UpperFloor1" index="1"]
-transform = Transform( 0.7, 0, 0, 0, 0.06, 0, 0, 0, 0.9, -0.166933, 0.0163727, -0.51714 )
+transform = Transform( 0.048, 0, 0, 0, 0.03, 0, 0, 0, 0.034, 0.0519137, 0.153195, -0.462118 )
 
 [node name="UpperFloor2" parent="Environment" index="2"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21254, 5.00508, -5.582 )
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03285, 4.7987, -5.41061 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor2" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.293984, 0.0019455, -0.0926565 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138165, 0.160248, -0.343254 )
 
 [node name="UpperFloor1Mesh" parent="Environment/UpperFloor2" index="1"]
-transform = Transform( 0.65, 0, 0, 0, 0.06, 0, 0, 0, 1.2, 0.290302, 0.0163879, -0.0992045 )
+transform = Transform( 0.045, 0, 0, 0, 0.03, 0, 0, 0, 0.05, 0.128867, 0.127663, -0.356235 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.166801, 0 )
 mass = 0.3
 gravity_scale = 0.5
 contacts_reported = 1
