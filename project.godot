@@ -26,7 +26,7 @@ config/icon="res://icon.png"
 
 [gdnative]
 
-singletons=[ "res://addons/godot-openvr/godot_openvr.gdnlib" ]
+singletons=[ "res://Billboard/addons/godot-openvr/godot_openvr.gdnlib", "res://addons/godot-openvr/godot_openvr.gdnlib" ]
 
 [layer_names]
 
