@@ -82,12 +82,20 @@ func _ready():
 	PORT.open(ports[0], 9600, 1000)
 	PORT.flush()
 	print("get_available", PORT.get_available())
+	
+#func _on_Area_area_entered(area):
+#	print("on Area")
+#	if area.get_name() == "RightFootArea" or area.get_name() == "LeftFootArea":
+#		print("Player is on Platform")
+#		player.set_translation(Vector3(1.7,0.18,0.8))
+#		origin.set_translation(Vector3(-1.7,0.18,-0.8))
+#		camera.set_translation(Vector3(-1.7,0.18,-0.8))
    
 func _move_platform_with_button():
+	player.set_translation(Vector3(1.7,0.16,0.8))
+	origin.set_translation(Vector3(-1.7,0.16,-0.8))
+	camera.set_translation(Vector3(-1.7,0.16,-0.8))
 	timer.stop()
-	player.set_translation(Vector3(1.7,0,0.8))
-	origin.set_translation(Vector3(-1.7,0,-0.8))
-	camera.set_translation(Vector3(-1.7,0,-0.8))
 	is_platform_moving = true
 	platform_moved = true
 	area_mesh_instance.visible = false
@@ -105,3 +113,4 @@ func _physics_process(delta):
 			force = 0
 			PORT.write("l")
 			PORT.flush()
+

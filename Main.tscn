@@ -3,10 +3,10 @@
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Environment.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
-[ext_resource path="res://default_env.tres" type="Environment" id=4]
-[ext_resource path="res://Platformer.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Button.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Bridge.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Platformer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Button.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Bridge.tscn" type="PackedScene" id=6]
+[ext_resource path="res://default_env.tres" type="Environment" id=7]
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -15,41 +15,39 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330738, 5.4624 )
 
 [node name="BottomFloor" parent="Environment" index="0"]
-editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.00521031, -5.2577 )
+
+[node name="Grass" parent="Environment/BottomFloor" index="2"]
+transform = Transform( -3.99749e-008, 0, 0.914518, 0, 0.133471, 0, -1.32988, 0, -5.81309e-008, 0.0723488, 0.0783637, -0.0859456 )
 
 [node name="UpperFloor1" parent="Environment" index="1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.47396, 4.77682, -5.45891 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.474, 5, -5.36511 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor1" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168856, 0.137343, -0.456378 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168856, 0.137343, -0.448038 )
 
 [node name="UpperFloor1Mesh" parent="Environment/UpperFloor1" index="1"]
 transform = Transform( 0.0477746, 0, 0, 0, 0.0446001, 0, 0, 0, 0.0344094, 0.021275, 0.0858183, -0.462118 )
 
 [node name="UpperFloor2" parent="Environment" index="2"]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03285, 4.7987, -5.41061 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.033, 5, -5.31711 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor2" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138165, 0.173543, -0.359138 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.138165, 0.173543, -0.329956 )
 
 [node name="UpperFloor1Mesh" parent="Environment/UpperFloor2" index="1"]
 transform = Transform( 0.0454077, 0, 0, 0, 0.0479684, 0, 0, 0, 0.049795, 0.128867, 0.121549, -0.356235 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.166801, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234192, 0 )
 mass = 0.3
 gravity_scale = 0.5
 contacts_reported = 1
 script = null
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource( 4 )
-
-[node name="Platformer" parent="." instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 1.75, 0.224134, 0.748821 )
+[node name="Platformer" parent="." instance=ExtResource( 4 )]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1.01404, 0, -1, 0, -4.37114e-008, 1.61383, 0.176405, 0.822199 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.580383, 0.814344, 0, -0.814344, 0.580383, -0.122559, 12.6303, 7.46226 )
@@ -61,12 +59,15 @@ shadow_enabled = true
 shadow_bias = -0.1
 directional_shadow_normal_bias = 0.5
 
-[node name="Button" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73437, -0.174178, 1.20249 )
+[node name="Button" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52246, -0.173446, 1.25022 )
 
-[node name="Bridge" parent="." instance=ExtResource( 7 )]
+[node name="Bridge" parent="." instance=ExtResource( 6 )]
 editor/display_folded = true
-transform = Transform( -0.7, 0, -6.11959e-008, 0, 0.75, 0, 6.11959e-008, 0, -0.7, -0.252491, 5.14642, -0.632935 )
+transform = Transform( -0.7, 0, -6.11959e-008, 0, 0.75, 0, 6.11959e-008, 0, -0.7, -0.271455, 5.3834, -0.527839 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource( 7 )
 [connection signal="move_platform" from="Button" to="Platformer" method="_move_platform_with_button"]
 
 [editable path="Environment"]

@@ -1394,7 +1394,7 @@ surfaces/9 = {
 size = Vector3( 0.8, 1.5, 0.6 )
 
 [sub_resource type="BoxShape" id=24]
-extents = Vector3( 0.407921, 0.749208, 0.296088 )
+extents = Vector3( 0.432784, 2.32064, 0.312941 )
 
 [node name="Platformer" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.104, -0.109, -0.55 )
@@ -1420,16 +1420,16 @@ material/8 = null
 material/9 = null
 
 [node name="Area" type="Area" parent="."]
-transform = Transform( 0.8, 0, 0, 0, 0.2, 0, 0, 0, 1.4, 0, 0.0913754, -0.0415935 )
+transform = Transform( 0.8, 0, 0, 0, 0.25, 0, 0, 0, 1.4, 0, 0.0864773, -0.0415935 )
 collision_mask = 2
 
 [node name="MeshInstance" type="MeshInstance" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0168638, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.370196, 0 )
 mesh = SubResource( 23 )
 material/0 = ExtResource( 4 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.018949, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139742, 0 )
 shape = SubResource( 24 )
 disabled = true
-[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
+[connection signal="area_entered" from="Area" to="." method="_on_Area_area_entered"]
