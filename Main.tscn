@@ -16,6 +16,7 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330738, 5.4624 )
 
 [node name="BottomFloor" parent="Environment" index="0"]
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.00521031, -5.2577 )
 
 [node name="Grass" parent="Environment/BottomFloor" index="2"]
@@ -55,7 +56,7 @@ contacts_reported = 1
 transform = Transform( -4.37114e-008, 0, 1, 0, 1.014, 0, -1, 0, -4.37114e-008, 1.39988, 0.176405, 0.760431 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
-transform = Transform( 0.245835, 0.789353, -0.562572, 0, 0.580383, 0.814344, 0.969312, -0.200194, 0.142678, -9.84105, 10.446, 2.08674 )
+transform = Transform( 0.050192, 0.269571, -0.961672, 0, 0.962885, 0.269911, 0.99874, -0.0135474, 0.0483291, -13.4419, 6.6861, 0.431303 )
 light_color = Color( 0.870588, 0.835294, 0.74902, 1 )
 light_energy = 0.2
 light_indirect_energy = 0.0

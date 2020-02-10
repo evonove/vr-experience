@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Erba.jpg" type="Texture" id=1]
+[ext_resource path="res://grass.jpg" type="Texture" id=2]
 
 [sub_resource type="Shader" id=1]
 resource_name = "Shader Nodetree"
@@ -144,7 +145,10 @@ surfaces/0 = {
 "vertex_count": 28
 }
 
+[sub_resource type="SpatialMaterial" id=4]
+albedo_texture = ExtResource( 2 )
+
 [node name="Floor" type="MeshInstance"]
 transform = Transform( 0.176, 0, 0, 0, -0.077, -5.42021e-009, 0, 6.73155e-009, -0.062, -0.537231, -16.6806, -5.46997 )
 mesh = SubResource( 3 )
-material/0 = null
+material/0 = SubResource( 4 )
