@@ -60,7 +60,7 @@ func timer_setup():
 	setup a timer used to make the platform to blink
 	"""
 	timer.set_autostart(true)
-	timer.set_wait_time(2)
+	timer.set_wait_time(1)
 	# manually add timer to the tree
 	add_child(timer)
 	
@@ -107,9 +107,9 @@ func _physics_process(delta):
 		# makes the platform move
 		vel.y = force * delta
 		move_and_slide(vel, pos)
-		h = int(self.get_translation().y)
+		h = self.get_translation().y
 		# platform stops
-		if h == stopping:
+		if h >= stopping + 0.4:
 			force = 0
 			PORT.write("l")
 			PORT.flush()
