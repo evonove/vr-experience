@@ -10,7 +10,7 @@ func timer_setup():
 	add_child(timer)
 
 func _on_timer_timeout():
-	$Boards.apply_torque_impulse(Vector3(0.009,0,0))
+	$Boards.apply_torque_impulse(Vector3(0.02, 0.0, 0.0))
 
 func _ready():
 	timer.connect("timeout", self, "_on_timer_timeout")
@@ -21,6 +21,7 @@ func _on_Board1_area_entered(area):
 	if area.get_name() == "RightFootArea" or area.get_name() == "LeftFootArea":
 		print("Player is on the Board1")
 		timer.start()
+		$Boards.apply_torque_impulse(Vector3(0.02, 0.0, 0.0))
 
 func _on_Board7_area_exited(area):
 #	pass

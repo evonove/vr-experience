@@ -16,15 +16,29 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0330738, 5.4624 )
 
 [node name="BottomFloor" parent="Environment" index="0"]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178688, 0.00521031, -5.2577 )
 
 [node name="Grass" parent="Environment/BottomFloor" index="2"]
 transform = Transform( -3.99749e-008, 0, 0.914518, 0, 0.133471, 0, -1.32988, 0, -5.81309e-008, 0.0723488, 0.0783637, -0.156197 )
 
-[node name="UpperFloor1" parent="Environment" index="1"]
+[node name="BottomFloor3" parent="Environment" index="2"]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -0.969351, 0, -4.23717e-008, 3.64089, 0.00521028, -3.48205 )
+
+[node name="BottomFloorCollisionShape" parent="Environment/BottomFloor3" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 2.13163e-014, 0, 1, 0.635203, -0.081521, -0.0319223 )
+
+[node name="Floor" parent="Environment/BottomFloor3" index="1"]
+transform = Transform( -0.196169, 1.17672e-008, -2.00808e-010, -2.93959e-008, -0.077339, 6.61744e-024, -7.29574e-010, 4.37632e-017, 0.0646714, 0.671604, 0.00465429, -0.14222 )
+
+[node name="Grass" parent="Environment/BottomFloor3" index="2"]
+transform = Transform( -6.56048e-008, 0, 1.11108, 0, 0.180996, 0, -1.47825, 0, -4.78298e-008, 0.599419, 0.0670417, -0.26174 )
+
+[node name="Grass2" parent="Environment/BottomFloor3" index="3"]
+transform = Transform( -6.56048e-008, 0, 1.11108, 0, 0.180996, 0, -1.47825, 0, -4.78298e-008, 0.697433, 0.0670417, 0.0654078 )
+
+[node name="UpperFloor1" parent="Environment" index="3"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.38361, 5, -5.50813 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.43568, 5, -5.50813 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor1" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168856, 0.137343, -0.448038 )
@@ -32,9 +46,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0168856, 0.137343, -0.448038
 [node name="UpperFloor1Mesh" parent="Environment/UpperFloor1" index="1"]
 transform = Transform( 0.0477746, 0, 0, 0, 0.0446001, 0, 0, 0, 0.0344094, 0.021275, 0.0858183, -0.462118 )
 
-[node name="UpperFloor2" parent="Environment" index="2"]
+[node name="UpperFloor2" parent="Environment" index="4"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.033, 5, -5.31711 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98093, 5, -5.31711 )
 
 [node name="UpperFloor1CollisionShape" parent="Environment/UpperFloor2" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.169001, 0.173543, -0.329956 )
@@ -47,7 +61,7 @@ transform = Transform( 0.574836, 0, 0, 0, 0.212337, 0, 0, 0, 0.474999, 0.190901,
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.234192, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.405423, 0 )
 mass = 0.3
 gravity_scale = 0.5
 contacts_reported = 1
@@ -69,8 +83,7 @@ directional_shadow_normal_bias = 0.5
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.34736, -0.173446, 1.25022 )
 
 [node name="Bridge" parent="." instance=ExtResource( 6 )]
-editor/display_folded = true
-transform = Transform( -0.7, 0, -6.11959e-008, 0, 0.75, 0, 6.11959e-008, 0, -0.7, -0.348179, 5.3834, -0.527839 )
+transform = Transform( -0.65, 0, -1.05697e-007, 0, 0.75, 0, 9.81473e-008, 0, -0.7, -0.282987, 5.47264, -0.527839 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = ExtResource( 7 )

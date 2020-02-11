@@ -77,11 +77,11 @@ func _ready():
 	timer_setup()
 	upperFloor = get_node("../Environment/UpperFloor1")
 	stopping = int(upperFloor.get_translation().y)
-	print("ports", PORT.list_ports())
+	print("ports ", PORT.list_ports())
 	var ports = PORT.list_ports();
 	PORT.open(ports[0], 9600, 1000)
 	PORT.flush()
-	print("get_available", PORT.get_available())
+	print("get_available ", PORT.get_available())
 	
 #func _on_Area_area_entered(area):
 #	print("on Area")
@@ -92,9 +92,9 @@ func _ready():
 #		camera.set_translation(Vector3(-1.7,0.18,-0.8))
    
 func _move_platform_with_button():
-	player.set_translation(Vector3(1.7,0.16,0.8))
-	origin.set_translation(Vector3(-1.7,0.16,-0.8))
-	camera.set_translation(Vector3(-1.7,0.16,-0.8))
+	player.set_translation(Vector3(1.7,0,0.8))
+	origin.set_translation(Vector3(-1.7,0,-0.8))
+	camera.set_translation(Vector3(-1.7,0,-0.8))
 	timer.stop()
 	is_platform_moving = true
 	platform_moved = true
@@ -109,7 +109,7 @@ func _physics_process(delta):
 		move_and_slide(vel, pos)
 		h = self.get_translation().y
 		# platform stops
-		if h >= stopping + 0.4:
+		if h >= stopping + 0.3:
 			force = 0
 			PORT.write("l")
 			PORT.flush()
